@@ -1,0 +1,26 @@
+name: Test Card and PDF Generation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-generator:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run Architecture Card Compiler Engine
+      shell: powershell
+      run: |
+        .\src\CardGenerator.ps1
+
+    - name: Validate Output File Assertions
+      shell: powershell
+      run: |
+        if (-not (Test-Path "architecture-cards-dashboard.html")) { throw "HTML Generation Failed" }
+        if (-not (Test-Path "architecture-cards-report.pdf")) { throw "PDF Engine Export Failed" }
+        Write-Host "All architectural documents generated successfully inside CI pipeline."
