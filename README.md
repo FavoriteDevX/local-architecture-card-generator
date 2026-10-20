@@ -1,3 +1,5 @@
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/d8abfb01-b863-444e-8c1c-1ba2a384d47c" />
+
 # Local Architecture Technical Card Generator 🎴⚙️
 
 A professional, language-agnostic documentation compilation tool designed for software architects and DevOps engineers to translate system infrastructure configurations into interactive, highly readable structural **Technical Metadata Cards** and automated **PDF Reports**.
